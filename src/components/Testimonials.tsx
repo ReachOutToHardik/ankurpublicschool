@@ -20,45 +20,56 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  return (
-    <section className="section-padding bg-brand-navy bg-dots-white text-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
-      
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <span className="text-brand-gold font-bold uppercase tracking-[0.2em] text-[13px] mb-4 block">
-            Parent Testimonials
-          </span>
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
-            Voices of Our <span className="text-brand-gold italic">Community</span>
-          </h2>
-          <div className="w-24 h-1 bg-brand-gold mx-auto"></div>
-        </div>
+  // Doubling the testimonials to create a seamless loop
+  const doubleTestimonials = [...testimonials, ...testimonials];
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {testimonials.map((t, i) => (
-            <motion.div
+  return (
+    <section className="py-24 bg-brand-navy bg-dots-white text-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-brand-gold/10 rounded-none blur-3xl -mr-48 -mt-48"></div>
+      
+      <div className="text-center mb-16 px-6">
+        <span className="text-brand-gold font-bold uppercase tracking-[0.2em] text-[13px] mb-4 block">
+          Parent Testimonials
+        </span>
+        <h2 className="text-4xl md:text-6xl font-display font-bold mb-4">
+          Voices of Our <span className="text-brand-gold italic">Community</span>
+        </h2>
+        <div className="w-24 h-1.5 bg-brand-gold mx-auto"></div>
+      </div>
+
+      <div className="relative flex overflow-hidden group">
+        <motion.div
+          animate={{
+            x: ["0%", "-50%"],
+          }}
+          transition={{
+            duration: 30,
+            ease: "linear",
+            repeat: Infinity,
+          }}
+          className="flex flex-nowrap"
+        >
+          {doubleTestimonials.map((t, i) => (
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2 }}
-              className="bg-white/5 border border-white/10 p-10 rounded-sm hover:bg-white/10 transition-all group"
+              className="w-[300px] md:w-[450px] flex-shrink-0 px-4"
             >
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} className="fill-brand-gold text-brand-gold" />
-                ))}
+              <div className="bg-white/5 border border-white/10 p-10 h-full hover:bg-white/10 transition-all group/card">
+                <div className="flex gap-1 mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={14} className="fill-brand-gold text-brand-gold" />
+                  ))}
+                </div>
+                <Quote className="text-brand-gold mb-6 opacity-30 group-hover/card:opacity-100 transition-opacity" size={32} />
+                <p className="text-blue-100 italic mb-8 leading-relaxed text-sm md:text-base">"{t.text}"</p>
+                <div>
+                  <h4 className="font-bold text-white text-lg">{t.name}</h4>
+                  <p className="text-brand-gold text-[10px] font-bold uppercase tracking-widest">{t.role}</p>
+                </div>
               </div>
-              <Quote className="text-brand-gold mb-6 opacity-30 group-hover:opacity-100 transition-opacity" size={32} />
-              <p className="text-blue-100 italic mb-8 leading-relaxed">"{t.text}"</p>
-              <div>
-                <h4 className="font-bold text-white text-lg">{t.name}</h4>
-                <p className="text-brand-gold text-[10px] font-bold uppercase tracking-widest">{t.role}</p>
-              </div>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
