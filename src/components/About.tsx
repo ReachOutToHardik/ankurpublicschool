@@ -3,7 +3,10 @@ import { Trees, School, BookOpen, Heart } from 'lucide-react';
 
 export default function About() {
   return (
-    <section id="about" className="section-padding bg-white pt-32 xl:pt-48 pb-16">
+    <section id="about" className="section-padding bg-white bg-dots relative overflow-hidden pt-32 xl:pt-48 pb-16">
+      {/* Background Decorations */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-gold/5 -skew-x-12 translate-x-1/2 -z-10"></div>
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-brand-navy/5 skew-x-12 -translate-x-1/2 -z-10"></div>
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
@@ -79,7 +82,7 @@ export default function About() {
             viewport={{ once: true }}
             className="order-1 lg:order-2 relative"
           >
-            <div className="aspect-[4/5] rounded-tl-[100px] rounded-br-[100px] overflow-hidden border-8 border-brand-slate shadow-2xl relative z-10">
+            <div className="aspect-[4/5] rounded-none overflow-hidden border-8 border-brand-slate shadow-2xl relative z-10">
               <img 
                 src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200" 
                 alt="School Environment" 

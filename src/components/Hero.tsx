@@ -4,19 +4,19 @@ import { ChevronLeft, ChevronRight, GraduationCap, Award, Users } from 'lucide-r
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=2071",
+    image: "https://www.ankurpublicschool.in/data1/images/dsc01423.jpg",
     title: "Welcome To Ankur Public School",
     subtitle: "Knowledge is Power",
     description: "Nurturing the future of India on our sprawling 2-acre lush green campus with world-class facilities and a tranquil ambience."
   },
   {
-    image: "https://images.unsplash.com/photo-1523050335102-c89b1811b131?auto=format&fit=crop&q=80&w=2070",
+    image: "https://schlexample.vercel.app/images/school-facade.jpg",
     title: "Temple of Knowledge",
     subtitle: "Academic Excellence & Growth",
     description: "Providing quality education through modern sophisticated buildings and spacious airy classrooms designed for your child."
   },
   {
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=2022",
+    image: "https://schlexample.vercel.app/images/school-children-dressed-uniform-have-fun-play-schoolyard.jpg",
     title: "Holistic Development",
     subtitle: "Beyond Books and Classrooms",
     description: "Focusing on character building, discipline, and emotional growth through sports, arts, and value-based learning."
@@ -76,10 +76,10 @@ export default function Hero() {
               {slides[current].description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-brand-gold text-brand-navy px-10 py-4 font-bold uppercase text-[13px] tracking-widest hover:bg-white transition-all shadow-xl rounded-sm">
+              <button className="bg-brand-gold text-brand-navy px-10 py-4 font-bold uppercase text-[13px] tracking-widest hover:bg-white transition-all shadow-xl rounded-none">
                 Enquire Now
               </button>
-              <button className="bg-transparent border-2 border-white text-white px-10 py-4 font-bold uppercase text-[13px] tracking-widest hover:bg-white hover:text-brand-navy transition-all rounded-sm backdrop-blur-sm">
+              <button className="bg-transparent border-2 border-white text-white px-10 py-4 font-bold uppercase text-[13px] tracking-widest hover:bg-white hover:text-brand-navy transition-all rounded-none backdrop-blur-sm">
                 Download Brochure
               </button>
             </div>
@@ -89,10 +89,10 @@ export default function Hero() {
 
       {/* Slider Controls */}
       <div className="absolute bottom-10 right-10 flex gap-4 z-20">
-        <button onClick={prev} className="w-12 h-12 rounded-full border border-white/30 text-white flex items-center justify-center hover:bg-white hover:text-brand-navy transition-all backdrop-blur-sm">
+        <button onClick={prev} className="w-12 h-12 rounded-none border border-white/30 text-white flex items-center justify-center hover:bg-white hover:text-brand-navy transition-all backdrop-blur-sm">
           <ChevronLeft />
         </button>
-        <button onClick={next} className="w-12 h-12 rounded-full border border-white/30 text-white flex items-center justify-center hover:bg-white hover:text-brand-navy transition-all backdrop-blur-sm">
+        <button onClick={next} className="w-12 h-12 rounded-none border border-white/30 text-white flex items-center justify-center hover:bg-white hover:text-brand-navy transition-all backdrop-blur-sm">
           <ChevronRight />
         </button>
       </div>
@@ -103,36 +103,36 @@ export default function Hero() {
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
-            className={`h-1.5 transition-all duration-500 rounded-full ${idx === current ? 'w-10 bg-brand-gold' : 'w-4 bg-white/40'}`}
+            className={`h-1.5 transition-all duration-500 rounded-none ${idx === current ? 'w-10 bg-brand-gold' : 'w-4 bg-white/40'}`}
           />
         ))}
       </div>
 
       {/* Quick Stats Overlay (Floating desktop) */}
       <div className="hidden xl:flex absolute bottom-0 left-0 right-0 max-w-7xl mx-auto px-6 z-30 translate-y-1/2">
-        <div className="w-full bg-white grid grid-cols-4 shadow-2xl divide-x divide-slate-100 rounded-lg overflow-hidden border border-slate-100">
-           {[
-             { icon: Users, label: "500+ Students", sub: "Grooming Excellence" },
-             { icon: GraduationCap, label: "Experienced Staff", sub: "Expert Guidance" },
-             { icon: Award, label: "2 Acres Campus", sub: "Tranquil Learning" },
-             { icon: Sparkles, label: "Modern Facilities", sub: "Global Standards" }
-           ].map((stat, i) => (
-             <div key={i} className="p-8 flex items-center gap-4 hover:bg-slate-50 transition-colors">
-               <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-brand-navy">
-                 <stat.icon size={28} />
-               </div>
-               <div>
-                 <p className="font-bold text-slate-800 text-lg leading-none mb-1">{stat.label}</p>
-                 <p className="text-xs text-slate-500 font-medium">{stat.sub}</p>
-               </div>
-             </div>
-           ))}
+        <div className="w-full bg-white grid grid-cols-4 shadow-2xl divide-x divide-slate-100 rounded-none overflow-hidden border border-slate-100">
+          {[
+            { icon: Users, label: "500+ Students", sub: "Grooming Excellence" },
+            { icon: GraduationCap, label: "Experienced Staff", sub: "Expert Guidance" },
+            { icon: Award, label: "2 Acres Campus", sub: "Tranquil Learning" },
+            { icon: Sparkles, label: "Modern Facilities", sub: "Global Standards" }
+          ].map((stat, i) => (
+            <div key={i} className="p-8 flex items-center gap-4 hover:bg-slate-50 transition-colors">
+              <div className="w-12 h-12 bg-slate-100 rounded-none flex items-center justify-center text-brand-navy">
+                <stat.icon size={28} />
+              </div>
+              <div>
+                <p className="font-bold text-slate-800 text-lg leading-none mb-1">{stat.label}</p>
+                <p className="text-xs text-slate-500 font-medium">{stat.sub}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-const Sparkles = ({size}: {size: number}) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+const Sparkles = ({ size }: { size: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" /><path d="M5 3v4" /><path d="M19 17v4" /><path d="M3 5h4" /><path d="M17 19h4" /></svg>
 );

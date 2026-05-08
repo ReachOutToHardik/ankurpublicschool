@@ -36,3 +36,21 @@
 .section-padding {
   @apply py-16 md:py-24;
 }
+
+.bg-dots {
+  background-image: radial-gradient(#cbd5e1 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+}
+
+.bg-dots-white {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+}
+
+.bg-mesh {
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.03) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, rgba(0, 51, 102, 0.03) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, rgba(128, 0, 0, 0.03) 0, transparent 50%);
+}

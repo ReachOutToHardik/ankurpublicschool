@@ -21,7 +21,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="section-padding bg-brand-navy text-white relative overflow-hidden">
+    <section className="section-padding bg-brand-navy bg-dots-white text-white relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">

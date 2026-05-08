@@ -25,7 +25,9 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="section-padding bg-brand-slate">
+    <section className="section-padding bg-mesh relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-slate-50 to-transparent opacity-50"></div>
+      <div className="absolute -left-24 bottom-1/4 w-64 h-64 bg-brand-navy/5 rounded-full blur-3xl"></div>
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-brand-maroon font-bold uppercase tracking-[0.2em] text-[13px] mb-4 block">

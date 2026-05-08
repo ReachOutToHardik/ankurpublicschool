@@ -11,7 +11,6 @@ import Leadership from './components/Leadership';
 import Facilities from './components/Facilities';
 import Gallery from './components/Gallery';
 import Testimonials from './components/Testimonials';
-import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -27,11 +26,9 @@ export default function App() {
         <Facilities />
         <Gallery />
         <Testimonials />
-        <FAQ />
         <Contact />
       </main>
       <Footer />
     </div>
   );
 }
-

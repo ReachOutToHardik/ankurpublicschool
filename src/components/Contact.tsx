@@ -3,7 +3,8 @@ import { motion } from 'motion/react';
 
 export default function Contact() {
   return (
-    <section id="contact" className="section-padding bg-white">
+    <section id="contact" className="section-padding bg-white bg-dots relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-gold/5 skew-x-12 translate-x-1/3 -z-10"></div>
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-brand-maroon font-bold uppercase tracking-[0.2em] text-[13px] mb-4 block">
@@ -67,19 +68,6 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Traditional Map Section */}
-        <div className="mt-20 h-[450px] relative rounded-sm overflow-hidden border-4 border-slate-100 grayscale hover:grayscale-0 transition-all duration-700">
-           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1131.761048684605!2d78.077!3d27.892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDUzJzMxLjIiTiA3OMKwMDQnMzcuMiJF!5e0!3m2!1sen!2sin!4v1715182911000!5m2!1sen!2sin" 
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen={true} 
-            loading="lazy" 
-            referrerPolicy="no-referrer-when-downgrade"
-            title="School Location Map"
-          ></iframe>
-        </div>
       </div>
     </section>
   );

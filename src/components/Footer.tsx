@@ -64,17 +64,20 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Admission Info */}
+          {/* Map Section */}
           <div>
-            <h4 className="text-lg font-bold mb-8 border-l-4 border-brand-gold pl-4 uppercase tracking-widest text-xs">Admissions 2026</h4>
-            <div className="bg-white/5 p-6 rounded border border-white/5 space-y-4">
-              <p className="text-xs text-white/80 leading-relaxed font-medium">Registration open for the academic session 2026-27. Grab your seat today!</p>
-              <button className="w-full bg-brand-gold text-brand-navy py-3 font-bold uppercase text-[11px] tracking-widest hover:bg-white transition-all">
-                Download Form
-              </button>
-              <button className="w-full bg-transparent border border-white/30 text-white py-3 font-bold uppercase text-[11px] tracking-widest hover:bg-white hover:text-brand-navy transition-all">
-                TC Verification
-              </button>
+            <h4 className="text-lg font-bold mb-8 border-l-4 border-brand-gold pl-4 uppercase tracking-widest text-xs">Our Location</h4>
+            <div className="h-[200px] rounded-none overflow-hidden border border-white/10 transition-all">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1131.761048684605!2d78.077!3d27.892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDUzJzMxLjIiTiA3OMKwMDQnMzcuMiJF!5e0!3m2!1sen!2sin!4v1715182911000!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="School Location Map"
+              ></iframe>
             </div>
           </div>
 

@@ -1,68 +1,54 @@
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 
 const categories = ['All', 'Campus', 'Classrooms', 'Events', 'Sports'];
 
 const images = [
-  { url: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=800", cat: 'Campus' },
-  { url: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800", cat: 'Classrooms' },
-  { url: "https://images.unsplash.com/photo-1523050335102-c89b1811b131?auto=format&fit=crop&q=80&w=800", cat: 'Events' },
-  { url: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=800", cat: 'Sports' },
+  { url: "https://www.ankurpublicschool.in/images/slides3.jpg", cat: 'Campus' },
+  { url: "https://www.ankurpublicschool.in/data1/images/dsc_0096.jpg", cat: 'Classrooms' },
+  { url: "https://www.ankurpublicschool.in/data1/images/img20190823wa0032.jpg", cat: 'Events' },
+  { url: "https://www.ankurpublicschool.in/data1/images/2.jpg", cat: 'Sports' },
   { url: "https://images.unsplash.com/photo-1577896851231-70ef1460370e?auto=format&fit=crop&q=80&w=800", cat: 'Campus' },
   { url: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800", cat: 'Classrooms' },
 ];
 
 export default function Gallery() {
-  const [active, setActive] = useState('All');
-
-  const filtered = active === 'All' ? images : images.filter(img => img.cat === active);
+  const displayedImages = images.slice(0, 4);
 
   return (
-    <section id="gallery" className="section-padding bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-brand-maroon font-bold uppercase tracking-[0.2em] text-[13px] mb-4 block">
-            Glimpses of APS
+    <section id="gallery" className="py-20 bg-white bg-dots relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-brand-gold/5 rounded-none blur-3xl -z-10"></div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-12">
+          <span className="text-brand-maroon font-bold uppercase tracking-[0.3em] text-[10px] mb-2 block">
+            School Life
           </span>
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-brand-navy mb-8">
-            Our Photo <span className="text-brand-gold italic">Gallery</span>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-brand-navy mb-4">
+            Our <span className="text-brand-gold italic font-light tracking-tight">Memories</span>
           </h2>
-          
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
-            {categories.map(cat => (
-              <button
-                key={cat}
-                onClick={() => setActive(cat)}
-                className={`px-6 py-2 text-xs font-bold uppercase tracking-widest transition-all rounded-sm ${
-                  active === cat ? 'bg-brand-navy text-white shadow-lg' : 'bg-brand-slate text-slate-500 hover:bg-slate-200'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((img, i) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {displayedImages.map((img, i) => (
             <motion.div
-              layout
               key={i}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="relative aspect-[4/3] overflow-hidden group rounded-sm"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="relative aspect-square overflow-hidden group shadow-md hover:shadow-xl transition-all duration-500 rounded-none border-4 border-white"
             >
               <img
                 src={img.url}
-                className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 cursor-pointer"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                 alt="Gallery"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-brand-navy/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                 <span className="text-white font-bold uppercase tracking-[0.3em] text-[10px] border border-white/30 px-4 py-2">
-                   View Large
-                 </span>
+
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                <p className="text-white font-bold text-[10px] uppercase tracking-widest mb-1">{img.cat}</p>
+                <p className="text-white/70 text-[9px] italic">APS Memories</p>
               </div>
             </motion.div>
           ))}

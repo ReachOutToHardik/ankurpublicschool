@@ -24,16 +24,24 @@ const leaders = [
 
 export default function Leadership() {
   return (
-    <section className="section-padding bg-brand-slate">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-brand-maroon font-bold uppercase tracking-[0.2em] text-[13px] mb-4 block">
+    <section className="section-padding bg-mesh relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white to-transparent opacity-50"></div>
+      <div className="absolute -right-24 top-1/4 w-64 h-64 bg-brand-gold/5 rounded-none blur-3xl"></div>
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-20">
+          <motion.span 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-brand-maroon font-bold uppercase tracking-[0.3em] text-[12px] mb-4 block"
+          >
             Messages from the Desk
-          </span>
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-brand-navy mb-4">
+          </motion.span>
+          <h2 className="text-4xl md:text-6xl font-display font-bold text-brand-navy mb-6">
             Our Visionary <span className="text-brand-gold italic">Leadership</span>
           </h2>
-          <div className="w-24 h-1 bg-brand-gold mx-auto"></div>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-brand-gold to-brand-navy mx-auto rounded-none"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
