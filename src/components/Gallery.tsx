@@ -4,9 +4,9 @@ import { useState } from 'react';
 const categories = ['All', 'Campus', 'Classrooms', 'Events', 'Sports'];
 
 const images = [
-  { url: "https://www.ankurpublicschool.in/images/slides3.jpg", cat: 'Campus' },
-  { url: "https://www.ankurpublicschool.in/data1/images/dsc_0096.jpg", cat: 'Classrooms' },
-  { url: "https://www.ankurpublicschool.in/data1/images/img20190823wa0032.jpg", cat: 'Events' },
+  { url: ".././public/hero-3.jpeg", cat: 'Campus' },
+  { url: ".././public/hero-4.jpeg", cat: 'Classrooms' },
+  { url: ".././public/her0-5.jpeg", cat: 'Events' },
   { url: "https://www.ankurpublicschool.in/data1/images/2.jpg", cat: 'Sports' },
   { url: "https://images.unsplash.com/photo-1577896851231-70ef1460370e?auto=format&fit=crop&q=80&w=800", cat: 'Campus' },
   { url: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800", cat: 'Classrooms' },
