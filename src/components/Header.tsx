@@ -16,7 +16,7 @@ export default function Header() {
     { name: 'Home', href: '#' },
     { name: 'About Us', href: '#about' },
     { name: 'Academics', href: '#' },
-    { name: 'Admissions', href: '#' },
+    { name: 'Public Disclosure', href: '#' },
     { name: 'Facilities', href: '#' },
     { name: 'Gallery', href: '#' },
     { name: 'Contact', href: '#contact' },
@@ -69,12 +69,12 @@ export default function Header() {
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-5">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-[13px] font-bold text-slate-700 hover:text-brand-navy uppercase tracking-wider transition-colors relative group"
+                className="text-[11px] font-bold text-slate-700 hover:text-brand-navy uppercase tracking-wider transition-colors relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover:w-full"></span>
