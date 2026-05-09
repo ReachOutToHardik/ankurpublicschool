@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube, Menu, X, ChevronDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -5,6 +7,7 @@ import { motion, AnimatePresence } from 'motion/react';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -80,9 +83,12 @@ export default function Header() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
-            <button className="bg-brand-maroon text-white px-6 py-2.5 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-brand-navy transition-all shadow-md active:scale-95">
-              Online Admission
-            </button>
+            <button
+  onClick={() => navigate('/admission-enquiry')}
+  className="bg-brand-maroon text-white px-6 py-2.5 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-brand-navy transition-all shadow-md active:scale-95"
+>
+  Online Admission
+</button>
           </div>
 
           {/* Mobile Toggle */}
@@ -114,9 +120,12 @@ export default function Header() {
                     {link.name}
                   </a>
                 ))}
-                <button className="w-full bg-brand-navy text-white py-3 rounded font-bold uppercase tracking-widest mt-2">
-                  Apply Now
-                </button>
+                <button
+  onClick={() => { navigate('/admission-enquiry'); setIsMenuOpen(false); }}
+  className="w-full bg-brand-navy text-white py-3 rounded font-bold uppercase tracking-widest mt-2"
+>
+  Apply Now
+</button>
               </div>
             </motion.div>
           )}
