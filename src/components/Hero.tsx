@@ -10,13 +10,13 @@ const slides = [
     description: "Nurturing the future of India on our sprawling 2-acre lush green campus with world-class facilities and a tranquil ambience."
   },
   {
-    image: ".././public/hero-1.jpeg",
+    image: "https://i.ibb.co/cctvChzc/banner-1.jpg",
     title: "Temple of Knowledge",
     subtitle: "Academic Excellence & Growth",
     description: "Providing quality education through modern sophisticated buildings and spacious airy classrooms designed for your child."
   },
   {
-    image: ".././public/hero-2.jpeg",
+    image: "https://i.ibb.co/tTDDNKyg/banner-2.jpg",
     title: "Holistic Development",
     subtitle: "Beyond Books and Classrooms",
     description: "Focusing on character building, discipline, and emotional growth through sports, arts, and value-based learning."

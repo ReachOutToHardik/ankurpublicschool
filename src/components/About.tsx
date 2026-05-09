@@ -84,7 +84,7 @@ export default function About() {
           >
             <div className="aspect-[4/5] rounded-none overflow-hidden border-8 border-brand-slate shadow-2xl relative z-10">
               <img 
-                src="../public/about-school.jpeg" 
+                src="https://i.ibb.co/9HmR3cPH/ankur-1.jpg" 
                 alt="School Environment" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

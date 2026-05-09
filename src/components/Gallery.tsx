@@ -4,11 +4,11 @@ import { useState } from 'react';
 const categories = ['All', 'Campus', 'Classrooms', 'Events', 'Sports'];
 
 const images = [
-  { url: ".././public/hero-3.jpeg", cat: 'Campus' },
-  { url: ".././public/hero-4.jpeg", cat: 'Classrooms' },
-  { url: ".././public/her0-5.jpeg", cat: 'Events' },
-  { url: "https://www.ankurpublicschool.in/data1/images/2.jpg", cat: 'Sports' },
-  { url: "https://images.unsplash.com/photo-1577896851231-70ef1460370e?auto=format&fit=crop&q=80&w=800", cat: 'Campus' },
+  { url: "https://i.ibb.co/N6mRxvyb/hero-3.jpg", cat: 'Campus' },
+  { url: "https://i.ibb.co/LzkjS9Yp/hero-6.jpg", cat: 'Classrooms' },
+  { url: "https://i.ibb.co/CpLVR2VW/hero-5.jpg", cat: 'Events' },
+  { url: "https://i.ibb.co/rG1pVWfq/hero-4.jpg", cat: 'Sports' },
+  { url: "https://i.ibb.co/WvJbQ0g5/hero-7.jpg", cat: 'Campus' },
   { url: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800", cat: 'Classrooms' },
 ];
 
